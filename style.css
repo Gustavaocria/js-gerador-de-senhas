@@ -1,298 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap&#39;);
 
-:root{
-    --bg:#050816;
-    --card:#0f172a;
-    --card-hover:#16213d;
-    --primary:#00e5ff;
-    --secondary:#7c3aed;
-    --text:#ffffff;
-    --text-soft:#94a3b8;
-    --success:#22c55e;
-    --warning:#f59e0b;
-    --danger:#ef4444;
+:root {
+    --branco: white;
+    --cor-de-fundo: #00162E;
+    --fundo-senha: #00244D;
+    --fundo-texto: #001E40;
+    --borda: #0075FF;
+    --roboto: 'Roboto', sans-serif;
+    --roboto-mono: 'Roboto Mono', monospace;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
+* {
+    font-weight: 400;
 }
 
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
-    overflow-x:hidden;
-    background:
-        radial-gradient(circle at top left,#00e5ff20,transparent 30%),
-        radial-gradient(circle at bottom right,#7c3aed30,transparent 30%),
-        linear-gradient(135deg,#020617,#0f172a,#020617);
+body {
+    color: var(--branco);
+    background-color: var(--cor-de-fundo);
+    font-family: var(--roboto);
 }
 
-body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-    background:
-        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-    background-size:40px 40px;
-    pointer-events:none;
+.titulo-principal {
+    font-family: var(--roboto-mono);
+    font-size: 32px;
 }
 
-.conteudo{
-    width:100%;
-    max-width:950px;
-    background:rgba(15,23,42,.85);
-    backdrop-filter:blur(25px);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:35px;
-    padding:40px;
-    box-shadow:
-        0 0 30px rgba(0,229,255,.15),
-        0 0 80px rgba(124,58,237,.15),
-        0 30px 60px rgba(0,0,0,.6);
+.titulo-secundario {
+    font-size: 24px;
 }
 
-.conteudo-titulo{
-    text-align:center;
-    margin-bottom:35px;
+.conteudo-titulo {
+    text-align: center;
+    margin-top: 80px;
 }
 
-.conteudo-titulo img{
-    width:90px;
-    margin-bottom:20px;
-    filter:
-        drop-shadow(0 0 10px var(--primary))
-        drop-shadow(0 0 25px var(--primary));
-    animation: flutuar 3s ease-in-out infinite;
+.conteudo-senha {
+    margin-top: 80px;
+    background: var(--fundo-senha);
+    padding: 24px;
+    border-bottom: 6px solid var(--borda);
 }
 
-@keyframes flutuar{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
+#campo-senha {
+    background-color: var(--fundo-senha);
+    border: none;
+    color: var(--branco);
+    font-family: var(--roboto-mono);
+    font-size: 40px;
+    width: 70%;
 }
 
-.titulo-principal{
-    font-size:3rem;
-    font-weight:800;
-    color:white;
-    background:linear-gradient(90deg,#00e5ff,#7c3aed);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+#campo-senha:focus {
+    outline: none;
 }
 
-.titulo-secundario{
-    color:var(--text-soft);
-    margin-top:10px;
-    font-size:1rem;
+.conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.conteudo-senha{
-    margin:30px 0;
+.parametro {
+    background-color: var(--fundo-texto);
+    border: 2px solid var(--borda);
+    margin-top: 32px;
+    padding: 24px;
 }
 
-.conteudo-senha label{
-    display:block;
-    color:white;
-    margin-bottom:10px;
-    font-weight:600;
+.parametro-titulo {
+    font-family: var(--roboto-mono);
+    font-size: 28px;
 }
 
-#campo-senha{
-    width:100%;
-    border:none;
-    outline:none;
-    padding:22px;
-    border-radius:20px;
-    background:#020617;
-    color:#00e5ff;
-    font-size:1.3rem;
-    font-weight:700;
-    letter-spacing:2px;
-    border:2px solid rgba(0,229,255,.2);
-    transition:.3s;
+.parametro-senha__titulo {
+    font-size: 24px;
 }
 
-#campo-senha:hover{
-    border-color:#00e5ff;
-    box-shadow:0 0 20px rgba(0,229,255,.3);
+.parametro-coluna__senha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.parametro-titulo{
-    text-align:center;
-    color:white;
-    font-size:1.8rem;
-    margin-bottom:25px;
+.parametro-senha {
+    width: 50%;
+    margin: 0 auto;
 }
 
-.parametro-coluna__senha{
-    display:grid;
-    gap:25px;
+.parametro-senha-botoes {
+    display: flex;
+    justify-content: center;
 }
 
-.parametro-senha{
-    background:linear-gradient(
-        145deg,
-        rgba(15,23,42,.95),
-        rgba(30,41,59,.95)
-    );
-    border-radius:25px;
-    padding:25px;
-    border:1px solid rgba(255,255,255,.05);
-    transition:.4s;
+.parametro-senha__botao {
+    background-color: var(--fundo-texto);
+    color: var(--branco);
+    border: 2px solid var(--borda);
+    padding: 24px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.parametro-senha:hover{
-    transform:translateY(-5px);
-    border-color:rgba(0,229,255,.25);
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+.parametro-senha__texto {
+    padding: 24px;
+    border-top: 2px solid var(--borda);
+    border-bottom: 2px solid var(--borda);
+    margin: 0;
+    font-size: 24px;
 }
 
-.parametro-senha__titulo{
-    color:white;
-    font-size:1.1rem;
-    margin-bottom:20px;
+label {
+    font-size: 20px;
 }
 
-.parametro-senha-botoes{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
-.parametro-senha__botao{
-    width:55px;
-    height:55px;
-    border:none;
-    cursor:pointer;
-    border-radius:50%;
-    color:white;
-    font-size:1.8rem;
-    font-weight:700;
-    background:linear-gradient(
-        135deg,
-        #00e5ff,
-        #7c3aed
-    );
-    transition:.3s;
+.barra {
+    background-color: var(--fundo-senha);
+    height: 30px;
+    width: 100%;
 }
 
-.parametro-senha__botao:hover{
-    transform:scale(1.15) rotate(10deg);
-    box-shadow:
-        0 0 25px rgba(0,229,255,.5),
-        0 0 50px rgba(124,58,237,.4);
+.forca {
+    height: 30px;
+    position: relative;
+    bottom: 30px;
 }
 
-.parametro-senha__texto{
-    color:white;
-    font-size:2rem;
-    font-weight:800;
-    min-width:50px;
-    text-align:center;
+.fraca {
+    width: 25%;
+    background-color: #E71B32;
 }
 
-.parametro-senha-checkbox{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:12px 15px;
-    margin-bottom:10px;
-    border-radius:15px;
-    background:rgba(255,255,255,.03);
-    transition:.3s;
+.media {
+    background-color: #FAF408;
+    width: 50%;
 }
 
-.parametro-senha-checkbox:hover{
-    background:rgba(0,229,255,.08);
+.forte {
+    background-color: #00FF85;
+    width: 100%;
 }
 
-.checkbox{
-    width:22px;
-    height:22px;
-    accent-color:#00e5ff;
+.parametro-senha-textos {
+    display: flex;
+    justify-content: space-between;
 }
 
-.parametro-senha-checkbox label{
-    color:white;
-    cursor:pointer;
-}
 
-.barra{
-    width:100%;
-    height:16px;
-    border-radius:50px;
-    overflow:hidden;
-    background:#020617;
-    border:1px solid rgba(255,255,255,.05);
-}
-
-.forca{
-    height:100%;
-    width:20%;
-    border-radius:50px;
-    transition:.5s;
-}
-
-.fraca{
-    background:linear-gradient(90deg,#ef4444,#dc2626);
-    box-shadow:0 0 15px #ef4444;
-}
-
-.media{
-    background:linear-gradient(90deg,#f59e0b,#fbbf24);
-    box-shadow:0 0 15px #f59e0b;
-}
-
-.forte{
-    background:linear-gradient(90deg,#22c55e,#4ade80);
-    box-shadow:0 0 15px #22c55e;
-}
-
-.parametro-senha-textos{
-    display:flex;
-    justify-content:space-between;
-    margin-top:12px;
-}
-
-.parametro-senha-textos p{
-    color:var(--text-soft);
-    font-size:.9rem;
-}
-
-.entropia{
-    margin-top:15px;
-    text-align:center;
-    color:#00e5ff;
-    font-weight:700;
-    font-size:1.1rem;
-}
-
-@media(max-width:768px){
-
-    .conteudo{
-        padding:25px;
-    }
-
-    .titulo-principal{
-        font-size:2rem;
-    }
-
-    .parametro-senha{
-        padding:20px;
-    }
-
-    #campo-senha{
-        font-size:1rem;
+@media screen and (min-width: 768px) {
+    .parametro-coluna__senha {
+        flex-direction: row;
     }
 }
